@@ -32,6 +32,23 @@ setopt PROMPT_SUBST
 NEWLINE=$'\n'
 PROMPT='%K{green}%F{black}[%D{%L:%M:%S}] %F{black}%K{blue}%n@%m %k%F{cyan} ${PWD/#$HOME/~} %F{green}${vcs_info_msg_0_} ${NEWLINE}> '
 
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+NEWLINE=$'\n'
+
+# Define machine colors
+typeset -A machine_colors
+machine_colors=(
+    jameslnx1 magenta
+    othermachine red
+    anothermachine yellow
+)
+
+# Get color for current machine, default to blue
+MACHINE_COLOR=${machine_colors[$HOST]:-blue}
+
+PROMPT='%K{green}%F{black}[%D{%L:%M:%S}] %F{black}%K{'$MACHINE_COLOR'}%n@%m %k%F{cyan} ${PWD/#$HOME/~} %F{green}${vcs_info_msg_0_} ${NEWLINE}> '
+
 # iterm2 shell integration
 [[ -r ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh
 
