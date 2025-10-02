@@ -1,0 +1,20 @@
+Host doubtful.io
+  HostName gitlab.com
+  IdentityFile ~/.ssh/gitlab
+  User zakum1
+  IdentitiesOnly yes
+
+Host iouze.gitlab.com
+  Hostname gitlab.com
+  IdentityFile ~/.ssh/id_ecdsa
+  User james.iouze
+
+Host github.com
+  User git
+  AddKeysToAgent yes
+  PreferredAuthentications publickey
+  UseKeychain yes
+  IdentityFile ~/.ssh/ithub_zakum1
+  
+
+
