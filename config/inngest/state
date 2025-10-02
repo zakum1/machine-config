@@ -1,0 +1,15 @@
+{
+  "clientID": "ed6ee363-87ab-42fc-89d9-6cd316c0e984",
+  "credentials": null,
+  "account": {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "name": "",
+    "test": false,
+    "identifier": {
+      "dsnPrefix": "",
+      "domain": null,
+      "verifiedAt": null
+    }
+  },
+  "settings": null
+}

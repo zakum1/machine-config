@@ -33,10 +33,10 @@ NEWLINE=$'\n'
 PROMPT='%K{green}%F{black}[%D{%L:%M:%S}] %F{black}%K{blue}%n@%m %k%F{cyan} ${PWD/#$HOME/~} %F{green}${vcs_info_msg_0_} ${NEWLINE}> '
 
 # iterm2 shell integration
-source ~/.iterm2_shell_integration.zsh
+[[ -r ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh
 
 # zsh syntax highlighting
-source ~/.zfunctions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -r  ~/.zfunctions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source ~/.zfunctions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # change colors of prompt:
 
@@ -63,18 +63,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/james/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/james/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/james/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/james/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 # alias cl='echo "  🚨 ✨ 💄 🔒 🛠 ⚡ 🐞 📚 🏗 ♻️ 🚦 🎨 📦 🔖 🚧 🚜  "'
 . ~/.developer.sh
 
 # deno
-export DENO_INSTALL="/Users/james/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+[[ -d ~/.deno ]] && export DENO_INSTALL="~/.deno" && export PATH="$DENO_INSTALL/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -99,7 +92,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 export TUTOR_ROOT=~/.local/share/tutor
 export TUTOR_PLUGINS_ROOT=~/.local/share/tutor-plugins
-export BROWSER=vivaldi
+export BROWSER=brave
 
 # virtualenvwrapper
 # export WORKON_HOME=$HOME/.virtualenvs
@@ -113,7 +106,7 @@ export CIRCULAR_WORKTREE=$HOME/dev/circular
 
 eval "$(direnv hook zsh)"
 
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+[[ -d $HOME/perl5  ]] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 
 ##### keep separate command history for different projects
