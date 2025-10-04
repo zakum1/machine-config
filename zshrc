@@ -164,3 +164,6 @@ chpwd() {
 
 # Run once at shell startup
 chpwd
+
+# tmux 
+alias claudet="tmux-cmd claude"
