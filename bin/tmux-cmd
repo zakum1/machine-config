@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: tmux-cmd <command>"
+    exit 1
+fi
+
+cmd="$1"
+dir_name="${PWD##*/}"
+session_name="${dir_name}-${cmd}"
+# Sanitize session name for tmux (replace / and : with -)
+session_name="${session_name//\//-}"
+session_name="${session_name//:/--}"
+
+if tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux attach-session -t "$session_name"
+else
+    tmux new-session -s "$session_name" "$cmd"
+fi

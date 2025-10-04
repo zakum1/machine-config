@@ -1,6 +1,6 @@
 setopt INTERACTIVE_COMMENTS
 
-export PATH=$PATH:/Users/james/bin
+export PATH=$PATH:$HOME/bin
 
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
