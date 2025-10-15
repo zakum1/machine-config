@@ -1,0 +1,6 @@
+RUN
+{
+    "default_options": [
+        "--style=fruity"
+    ]
+}

@@ -139,7 +139,7 @@ typeset -A PROJECT_HISTORIES
 PROJECT_HISTORIES[$HOME/dev/circular]="$HOME/.zsh_history_circular"
 PROJECT_HISTORIES[$HOME/dev/ez]="$HOME/.zsh_history_ez"
 PROJECT_HISTORIES[$HOME/dev/fininv]="$HOME/.zsh_history_fininv"
-PROJECT_HISTORIES[$HOME/dev/peripatty]="$HOME/.zsh_history_peripatty"
+PROJECT_HISTORIES[$HOME/dev/peripata]="$HOME/.zsh_history_peripata"
 
 # Hook on directory change
 chpwd() {
