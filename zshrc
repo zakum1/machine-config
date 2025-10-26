@@ -169,3 +169,7 @@ chpwd
 
 # tmux 
 alias claudet="tmux-cmd claude"
+
+# podman
+alias docker=podman
+
